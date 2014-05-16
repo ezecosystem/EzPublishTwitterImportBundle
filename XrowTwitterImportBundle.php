@@ -1,6 +1,6 @@
 <?php
 
-namespace Xrow\TwitterImportBundle;
+namespace xrow\EzPublishTwitterImportBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

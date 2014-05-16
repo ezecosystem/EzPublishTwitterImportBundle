@@ -1,6 +1,6 @@
 <?php
 
-namespace Xrow\TwitterImportBundle\DependencyInjection;
+namespace xrow\EzPublishTwitterImportBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;

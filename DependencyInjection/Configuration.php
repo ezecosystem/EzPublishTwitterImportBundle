@@ -1,6 +1,6 @@
 <?php
 
-namespace Xrow\TwitterImportBundle\DependencyInjection;
+namespace xrow\EzPublishTwitterImportBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;

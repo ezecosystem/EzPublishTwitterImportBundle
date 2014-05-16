@@ -1,6 +1,6 @@
 <?php
 
-namespace Xrow\TwitterImportBundle\Command;
+namespace xrow\EzPublishTwitterImportBundle\Command;
 
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputInterface;
@@ -50,19 +50,17 @@ class CreateTweetContentCommand extends ContainerAwareCommand
               if($currentTime-$tweetTimestamp<86400){
 
                 $tweetId="twitter::tweet::" . $tweet->id_str;
-               // $output->writeln( "Tweets:{$tweet->text}" );
-               // $output->writeln( "User:{$tweet->user->name}" );
-               // $output->writeln( "TweetTimestamp:{$tweetTimestamp}" );
-               // $tweet_pretty=$this->linkEntitiesWithinText($tweet);
-               
+                $tweet_pretty=$this->linkEntitiesWithinText($tweet);
+                
                // Content create struct
                 $createStruct = $contentService->newContentCreateStruct(
                     $repository->getContentTypeService()->loadContentTypeByIdentifier( 'tweets' ),
-                    'eng-GB'
+                    'ger-DE'
                 );
 
-                $createStruct->setField( 'name',$tweet->text , 'eng-GB' );
-                $createStruct->setField( 'tweet', json_encode($tweet), 'eng-GB' );
+               // $createStruct->setField( 'text',$tweet->text , 'ger-DE' );
+                $createStruct->setField( 'text',$tweet_pretty, 'ger-DE' );
+                $createStruct->setField( 'tweet', json_encode($tweet), 'ger-DE' );
 
                 $createStruct->remoteId = $tweetId;
                     

@@ -1,10 +1,3 @@
-#parameters:
-#    xrow_twitter_import.example.class: Xrow\TwitterImportBundle\Example
-
-#services:
-#    xrow_twitter_import.example:
-#        class: %xrow_twitter_import.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
 imports:
 - { resource: twitter.conf.yml }
 - { resource: twitter.yml }
