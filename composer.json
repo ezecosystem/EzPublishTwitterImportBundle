@@ -1,7 +1,7 @@
 {
     "name": "xrow/ezpublish-twitterimport-bundle",
     "description": "Delivers an importer for twitter.",
-    "type": "import script",
+    "type": "import",
     "keywords": [ "cron", "import", "twitter", "ezpublish" ],
     "homepage": "http://www.xrow.de",
     "license": "MIT",
