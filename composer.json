@@ -1,5 +1,20 @@
 {
+    "name": "xrow/ezpublish-twitterimport-bundle",
+    "description": "Delivers an importer for twitter.",
+    "type": "import script",
+    "keywords": [ "cron", "import", "twitter", "ezpublish" ],
+    "homepage": "http://www.xrow.de",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Björn Dieding",
+            "email": "bjoern@xrow.de",
+            "homepage": "http://www.xrow.de",
+            "role": "Developer"
+        }
+    ],
     "require": {
-        "guzzle/guzzle": "~3.1.1"
+        "php": ">=5.3.0",
+        "guzzle/guzzle": "~3.7"
     }
 }
