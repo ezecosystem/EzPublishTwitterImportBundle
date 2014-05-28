@@ -59,14 +59,13 @@ class CreateTweetContentCommand extends ContainerAwareCommand
             if($currentTime-$tweetTimestamp<3600)
             {
                 $tweetId="twitter::tweet::" . $tweet['id_str'];
-                $tweet_pretty = $this->parse_message( $tweet );
                // Content create struct
                 $createStruct = $contentService->newContentCreateStruct(
                     $repository->getContentTypeService()->loadContentTypeByIdentifier( 'tweets' ),
                     'ger-DE'
                 );
 
-                $createStruct->setField( 'text',$tweet_pretty, 'ger-DE' );
+                $createStruct->setField( 'text',$tweet['text'] , 'ger-DE' );
                 $createStruct->setField( 'tweet', json_encode($tweet), 'ger-DE' );
 
                 $createStruct->remoteId = $tweetId;
@@ -88,62 +87,5 @@ class CreateTweetContentCommand extends ContainerAwareCommand
                 }
              }else{$output->writeln( "No new tweets being displayed...." );}
          }
-    }
-    
-    function parse_message( &$tweet ) 
-    {
-        if ( !empty($tweet['entities']) ) 
-        {
-            $replace_index = array();
-            $append = array();
-            $text = $tweet['text'];
-            foreach ($tweet['entities'] as $area => $items) 
-            {
-                $prefix = false;
-                $display = false;
-                switch ( $area ) {
-                    case 'hashtags':
-                        $find = 'text';
-                        $prefix = '#';
-                        $url = 'https://twitter.com/search/?src=hash&q=%23';
-                        break;
-                    case 'user_mentions':
-                        $find = 'screen_name';
-                        $prefix = '@';
-                        $url = 'https://twitter.com/';
-                        break;
-                    /*case 'media':
-                        $display = 'media_url_https';
-                        $href = 'media_url_https';
-                        $size = 'small';
-                        break;*/
-                    case 'urls':
-                        $find = 'url';
-                        $display = 'display_url';
-                        $url = "expanded_url";
-                        break;
-                    default: break;
-                }
-                foreach ($items as $item) 
-                {
-                  /*if ( $area == 'media' ) 
-                   *{
-                        // $append[$item->$display] = "<img src=\"{$item->$href}:$size\" />";
-                    }else{*/
-                    $msg = $display ? $prefix.$item[$display] : $prefix.$item[$find];
-                    $replace = $prefix.$item[$find];
-                    $href = isset($item[$url]) ? $item[$url] : $url;
-                    if (!(strpos($href, 'http') === 0)) $href = "http://".$href;
-                    if ( $prefix ) $href .= $item[$find];
-                    $with = "<a href=\"$href\">$msg</a>";
-                    $replace_index[$replace] = $with;
-                 //}
-                }
-            }
-            foreach ($replace_index as $replace => $with) $tweet['text'] = str_replace($replace,$with,$tweet['text']);
-            foreach ($append as $add) $tweet['text'] .= $add;
-        
-            return $tweet['text'];
-        }
     }
 }
