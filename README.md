@@ -24,7 +24,7 @@ Examples:
         token_secret: xxxxxxxxxxxxxxxxxxxxxxx
     ```
 
-4. Import `twitter.conf.yml` in `ezpublish/config/config.yml` by adding:
+4. Import `twitter.conf.yml` in `ezpublish/config/ezpublish.yml` by adding:
     
     ```
     imports:
