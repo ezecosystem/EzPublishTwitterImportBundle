@@ -26,15 +26,14 @@ parameters:
 
 4 Import `twitter.conf.yml` in `ezpublish/config/config.yml` by adding:
     
-    ```
+```
     imports:
          - { resource: twitter.conf.yml }
         
-    ```
+```
 
 5. Register `EzPublishTwitterImportBundle` in `ezpublish/ezPublishKernel.php` by adding this line to `$bundles` in `registerBundles()` method:
 
-    ```
+```
      new xrow\EzPublishTwitterImportBundle\XrowTwitterImportBundle(),
-    
-    ```
+```
