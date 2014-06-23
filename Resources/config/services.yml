@@ -1,3 +1,2 @@
 imports:
-- { resource: twitter.conf.yml }
-- { resource: twitter.yml }
+    - { resource: twitter.yml }
