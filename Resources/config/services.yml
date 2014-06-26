@@ -1,2 +1,8 @@
 imports:
     - { resource: twitter.yml }
+parameters:
+    import.user.class: xrow\EzPublishTwitterImportBundle\Service\UserService
+services:
+    import.user:
+        class: %import.user.class%
+        arguments: [%import.user.config%]
