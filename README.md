@@ -31,7 +31,7 @@ Examples:
          - { resource: twitter.conf.yml }
     parameters:
         import.user.config:
-            import_user: xxxx(username)
+            import_user: xxxx(username)<-- If not given or empty, then the username defaults to 'admin'
     ```
 
 5. Register `EzPublishTwitterImportBundle` in `ezpublish/ezPublishKernel.php` by adding this line to `$bundles` in `registerBundles()` method:
