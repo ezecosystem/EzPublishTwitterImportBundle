@@ -29,6 +29,9 @@ Examples:
     ```
     imports:
          - { resource: twitter.conf.yml }
+    parameters:
+        import.user.config:
+            import_user: xxxx(username)
     ```
 
 5. Register `EzPublishTwitterImportBundle` in `ezpublish/ezPublishKernel.php` by adding this line to `$bundles` in `registerBundles()` method:
