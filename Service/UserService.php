@@ -11,7 +11,7 @@ class UserService
         $this->config = $config;
     }
 
-    public function setUser()
+    public function getUser()
     {
         $adminuser = $this->config['import_user'];
         return $adminuser;

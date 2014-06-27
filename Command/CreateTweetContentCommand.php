@@ -28,7 +28,12 @@ class CreateTweetContentCommand extends ContainerAwareCommand
         $locationId = $input->getArgument( 'location' );
         $twitterAccounts = $input->getArgument( 'twitterAccount' );
         $repository = $this->getContainer()->get( 'ezpublish.api.repository' );
-        $import_user = $this->getContainer()->get('import.user')->setUser();
+        if($this->getContainer()->get('import.user')->getUser() =="")
+        {
+            $import_user="admin";
+        }else{
+            $import_user = $this->getContainer()->get('import.user')->getUser();
+        }
         $repository->setCurrentUser(
             $repository->getUserService()->loadUserByLogin( $import_user )
         );
