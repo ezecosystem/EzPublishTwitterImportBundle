@@ -18,6 +18,6 @@
         "guzzle/guzzle": "~3.7"
     },
     "autoload": {
-        "psr-4": { "xrow\\EzPublishTwitterImportBundle\\": ""}
+        "psr-4": { "xrow\\EzPublishTwitterImportBundle\\": "xrow/ezpublish-twitterimport-bundle/EzPublishTwitterImportBundle/"}
     }
 }
