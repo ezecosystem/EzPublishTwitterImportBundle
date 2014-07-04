@@ -12,6 +12,6 @@ class DefaultControllerTest extends WebTestCase
 
         $crawler = $client->request('GET', '/hello/xrow');
 
-        $this->assertTrue($crawler->filter('html:contains("Hello Xrow")')->count() > 0);
+        $this->assertTrue($crawler->filter('html:contains("Hello Xrow !")')->count() > 0);
     }
 }
