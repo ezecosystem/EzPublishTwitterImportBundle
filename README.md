@@ -6,6 +6,7 @@ Delivers an importer for twitter.
 ## Installation
 
 1. To install XrowTwitterImportBundle wiht Composer just add the following to your `composer.json` file:
+
     ```
     // composer.json
     {
@@ -16,10 +17,13 @@ Delivers an importer for twitter.
          }
     }
     ```
+    
     Then, you can install the new dependencies by running Composer's `update` command from the directory where your `composer.json` file is located:
+    
     ```
     $ php composer.phar update
     ```
+    
     Now, Composer will automatically download all required files, and install them for you.
 2. You can configure the baseurl, consumer_key, consumer_secret, token and token_secret in your twitter.conf.yml.
 Examples:
