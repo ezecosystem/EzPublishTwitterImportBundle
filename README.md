@@ -5,7 +5,7 @@ Delivers an importer for twitter.
 
 ## Installation
 
-1. To install XrowTwitterImportBundle wiht Composer just add the following to your `composer.json` file:
+1. To install XrowTwitterImportBundle with Composer just add the following to your `composer.json` file:
 
     ```
     // composer.json
