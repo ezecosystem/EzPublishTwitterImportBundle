@@ -87,11 +87,9 @@ class CreateTweetContentCommand extends ContainerAwareCommand
                 }
                 catch ( \Exception $e )
                 {
-                    $output->writeln( "An error occured creating the content: " . $e->getMessage() );
-                    //$output->writeln( $e->getTraceAsString() );
                     continue;
                 }
-             }else{$output->writeln( "No new tweets being displayed...." );}
+             }else{continue;}
          }
     }
 }
